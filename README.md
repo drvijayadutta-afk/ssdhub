@@ -1,6 +1,6 @@
 # SSD Hub website
 
-Website starter for **SSD Hub — International Luxury Marketing & Growth Agency**.
+Website for **SSD Hub — International Luxury Marketing & Growth Agency**.
 
 ## Brand direction
 - Tagline: Beyond Visibility. Into Desirability.
@@ -9,19 +9,28 @@ Website starter for **SSD Hub — International Luxury Marketing & Growth Agency
 - Operating model: founder-led with a curated specialist partner network.
 
 ## Run locally
-Open `index.html` in a browser, or serve this folder with any static web server.
+This project uses a Vercel serverless function for contact form delivery. Run with the Vercel CLI:
+```bash
+npm i -g vercel
+vercel dev
+``
 
-## Enquiry form
-The contact form currently posts to FormSubmit at `drvijayadutta@gmail.com`. FormSubmit may require an initial email activation/confirmation before messages are delivered. Before launch, test the form end-to-end and configure a dedicated form provider or backend if you need stronger spam protection, CRM routing or delivery guarantees.
+## Private enquiry form setup
+The recipient email address is deliberately not displayed on the website or embedded in the frontend. Configure these environment variables in Vercel Project Settings → Environment Variables:
+
+- `CONTACT_EMAIL`: the private inbox that should receive enquiries.
+- `RESEND_API_KEY`: API key from Resend.
+- `RESEND_FROM_EMAIL`: a sender address on a domain verified with Resend.
+
+The form sends submissions to `/api/contact`, which forwards them server-side through Resend. Do not put the recipient address or API key in frontend code. Test the form after setting the environment variables and redeploying.
 
 ## WhatsApp
 The floating WhatsApp CTA opens a chat with +91 98734 84787.
 
 ## Before publishing
-- Replace concept projects with verified case studies when available; current examples are explicitly labelled as concept projects.
-- Add approved founder biography, verified credentials and real contact/business details.
+- Add approved founder biography and verified credentials.
 - Replace remote Unsplash image URLs with licensed brand photography.
-- Add final domain, canonical URL, sitemap, analytics, cookie/privacy language and production form handling.
+- Add final domain, canonical URL, sitemap, analytics, cookie/privacy language and production form protections.
 - Review all copy and legal/privacy requirements for the markets in which the site will operate.
 
-This is a static starter implementation. It is not yet deployed and is not connected to a live Framer project.
+No case studies or client results are currently presented. The website is not yet deployed and is not connected to a live Framer project.
