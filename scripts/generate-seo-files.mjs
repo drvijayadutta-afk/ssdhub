@@ -1,8 +1,8 @@
 import { readFile, writeFile } from "node:fs/promises";
 
-const siteUrl = (process.env.SITE_URL || "").replace(/\/$/, "");
-if (!siteUrl || !/^https:\/\//.test(siteUrl)) {
-  throw new Error("Set SITE_URL to your final HTTPS production domain before building, e.g. https://ssdhub.com");
+const siteUrl = (process.env.SITE_URL || "https://ssdluxury.vercel.app").replace(/\/$/, "");
+if (!/^https:\/\//.test(siteUrl)) {
+  throw new Error("SITE_URL must be an HTTPS production domain.");
 }
 
 const routes = [
