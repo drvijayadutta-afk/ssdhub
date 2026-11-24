@@ -1,36 +1,57 @@
 # SSD Hub website
 
-Website for **SSD Hub — International Luxury Marketing & Growth Agency**.
+**Live domain:** https://ssdluxury.vercel.app/  
+**Positioning:** International Luxury Marketing & Growth Agency  
+**Tagline:** Beyond Visibility. Into Desirability.
 
-## Brand direction
-- Tagline: Beyond Visibility. Into Desirability.
-- Visual language: editorial luxury; warm ivory, charcoal, champagne and warm grey.
-- Positioning: India-headquartered, international market focus.
-- Operating model: founder-led with a curated specialist partner network.
+## Brand and operating model
+- India-based, international market focus.
+- Founder-led with a curated network of specialist partners.
+- Editorial luxury visual language: warm ivory, charcoal, champagne and warm grey.
+- Priority SEO categories: luxury real estate and luxury hospitality, supported by brand strategy and digital marketing capabilities.
+- No case studies, client logos, testimonials or performance claims are published.
+
+## Website structure
+- Home and About
+- Seven service landing pages
+- Six industry landing pages
+- Contact, Privacy and Terms
+- `robots.txt`, `sitemap.xml`, favicon and structured data
 
 ## Run locally
-This project uses a Vercel serverless function for contact form delivery. Run with the Vercel CLI:
+This project uses a Vercel serverless function for contact form delivery:
 ```bash
 npm i -g vercel
 vercel dev
-``
+```
 
 ## Private enquiry form setup
-The recipient email address is deliberately not displayed on the website or embedded in the frontend. Configure these environment variables in Vercel Project Settings → Environment Variables:
-
-- `CONTACT_EMAIL`: the private inbox that should receive enquiries.
+The recipient email address is deliberately not displayed on the website or embedded in frontend code. Configure these environment variables in Vercel Project Settings → Environment Variables:
+- `CONTACT_EMAIL`: private inbox that receives enquiries.
 - `RESEND_API_KEY`: API key from Resend.
-- `RESEND_FROM_EMAIL`: a sender address on a domain verified with Resend.
+- `RESEND_FROM_EMAIL`: sender address on a domain verified with Resend.
 
-The form sends submissions to `/api/contact`, which forwards them server-side through Resend. Do not put the recipient address or API key in frontend code. Test the form after setting the environment variables and redeploying.
+The form posts to `/api/contact`, which forwards the enquiry server-side through Resend. Do not place the recipient address or API key in frontend code. Submit a test enquiry after configuration and redeployment.
 
 ## WhatsApp
 The floating WhatsApp CTA opens a chat with +91 98734 84787.
 
-## Before publishing
-- Add approved founder biography and verified credentials.
-- Replace remote Unsplash image URLs with licensed brand photography.
-- Add final domain, canonical URL, sitemap, analytics, cookie/privacy language and production form protections.
-- Review all copy and legal/privacy requirements for the markets in which the site will operate.
+## SEO implementation
+- Homepage and landing-page title tags and meta descriptions.
+- Canonical URLs use the current Vercel domain.
+- Open Graph and Twitter metadata.
+- Organization/agency and service structured data.
+- XML sitemap and robots.txt.
+- Descriptive internal links between the homepage and service/industry pages.
+- Responsive layouts and mobile navigation.
 
-No case studies or client results are currently presented. The website is not yet deployed and is not connected to a live Framer project.
+## Remaining launch checklist
+- Connect and verify Google Search Console; submit `https://ssdluxury.vercel.app/sitemap.xml`.
+- Connect GA4 and configure a conversion event for successful form submissions.
+- Set Vercel environment variables and test the enquiry flow end-to-end.
+- Replace temporary Unsplash images with licensed brand photography and add a branded social sharing image.
+- Run Lighthouse/PageSpeed on desktop and mobile after deployment; fix any Core Web Vitals issues.
+- Review Privacy and Terms pages with appropriate legal advice for the markets served.
+- Add only verified founder credentials and approved biography details.
+
+The website code is maintained in this repository and deployment depends on the Vercel project being connected to the GitHub repository. Confirm the latest production deployment in Vercel before treating these commits as live.
