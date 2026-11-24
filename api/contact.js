@@ -6,8 +6,13 @@ export default async function handler(req, res) {
 
   const { name, email, company, country, industry, service, project_brief, website } = req.body || {};
   if (website) return res.status(200).json({ ok: true });
-  if (!name || !email || !project_brief) {
-    return res.status(400).json({ message: "Please complete the required fields." });
+
+  const safe = (value, max = 1000) => String(value || "").trim().slice(0, max);
+  const cleanName = safe(name, 120);
+  const cleanEmail = safe(email, 254);
+  const cleanBrief = safe(project_brief, 4000);
+  if (!cleanName || !cleanEmail || !cleanBrief || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(cleanEmail)) {
+    return res.status(400).json({ message: "Please enter a valid name, email and project brief." });
   }
 
   const recipient = process.env.CONTACT_EMAIL;
@@ -17,19 +22,18 @@ export default async function handler(req, res) {
     return res.status(500).json({ message: "The enquiry service is not configured yet. Please try again later." });
   }
 
-  const safe = (value) => String(value || "").trim().slice(0, 5000);
   const content = [
     "New SSD Hub website enquiry",
     "",
-    "Name: " + safe(name),
-    "Email: " + safe(email),
-    "Company: " + safe(company),
-    "Country / Market: " + safe(country),
-    "Industry: " + safe(industry),
-    "Service: " + safe(service),
+    "Name: " + cleanName,
+    "Email: " + cleanEmail,
+    "Company: " + safe(company, 200),
+    "Country / Market: " + safe(country, 120),
+    "Industry: " + safe(industry, 120),
+    "Service: " + safe(service, 160),
     "",
     "Project brief:",
-    safe(project_brief)
+    cleanBrief
   ].join("\n");
 
   try {
@@ -42,7 +46,7 @@ export default async function handler(req, res) {
       body: JSON.stringify({
         from,
         to: [recipient],
-        reply_to: safe(email),
+        reply_to: cleanEmail,
         subject: "New SSD Hub website enquiry",
         text: content
       })
