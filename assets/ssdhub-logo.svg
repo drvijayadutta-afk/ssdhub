@@ -1,13 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2172 724" role="img" aria-labelledby="title desc">
-  <title id="title">SSD Hub — Luxury Marketing</title>
-  <desc id="desc">Editorial luxury wordmark in charcoal serif typography, with a champagne divider and the words Luxury Marketing. Strategy. Growth.</desc>
-  <g fill="#242321" font-family="'Bodoni MT', Didot, 'Times New Roman', Georgia, serif" font-weight="400">
-    <text x="65" y="445" font-size="340" letter-spacing="-18">SSD</text>
-    <text x="745" y="445" font-size="340" letter-spacing="-15">Hub</text>
-  </g>
-  <path d="M1385 205 V485" stroke="#B49A73" stroke-width="7"/>
-  <g fill="#242321" font-family="Arial, Helvetica, sans-serif" font-size="52" font-weight="400" letter-spacing="8">
-    <text x="1465" y="330">LUXURY MARKETING.</text>
-    <text x="1465" y="410">STRATEGY. GROWTH.</text>
-  </g>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 112" role="img" aria-labelledby="title desc">
+  <title id="title">SSD Hub</title>
+  <desc id="desc">SSD Hub wordmark in high-contrast charcoal serif lettering with a champagne accent.</desc>
+  <rect width="520" height="112" fill="none"/>
+  <text x="8" y="82" fill="#242321" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="400" letter-spacing="-4">SSD</text>
+  <path d="M254 18 V91" stroke="#B49A73" stroke-width="3"/>
+  <text x="279" y="80" fill="#242321" font-family="Georgia, 'Times New Roman', serif" font-size="75" font-weight="400" letter-spacing="-2">HUB</text>
 </svg>
