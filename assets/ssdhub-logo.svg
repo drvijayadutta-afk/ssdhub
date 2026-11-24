@@ -1,8 +1,5 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 112" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 90" role="img" aria-labelledby="title">
   <title id="title">SSD Hub</title>
-  <desc id="desc">SSD Hub wordmark in high-contrast charcoal serif lettering with a champagne accent.</desc>
-  <rect width="520" height="112" fill="none"/>
-  <text x="8" y="82" fill="#242321" font-family="Georgia, 'Times New Roman', serif" font-size="82" font-weight="400" letter-spacing="-4">SSD</text>
-  <path d="M254 18 V91" stroke="#B49A73" stroke-width="3"/>
-  <text x="279" y="80" fill="#242321" font-family="Georgia, 'Times New Roman', serif" font-size="75" font-weight="400" letter-spacing="-2">HUB</text>
+  <rect width="360" height="90" fill="none"/>
+  <text x="8" y="68" fill="#242321" font-family="Georgia, 'Times New Roman', serif" font-size="64" font-weight="400" letter-spacing="-1">SSD Hub</text>
 </svg>
